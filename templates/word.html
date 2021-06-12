@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/eb09170ffb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Stint+Ultra+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style-word.css' %}" type="text/css">
+    <title>Word</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div>
+            <form action="word" class="search">
+                <input type="text" name="search" class="searchTerm" width="60"
+                    placeholder="What word would you like to search?">
+                <button type="submit" class="searchButton">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <h3>Meaning: {{meaning}}</h3>
+
+        <h3>Synonyms: {% for synonym in synonyms %} {{synonym}}, {% endfor %} </h3>
+        <!-- <h3>Synonyms: {{syns}}</h3> -->
+
+        <h3>Antonyms: {% for antonym in antonyms %} {{antonym}}, {% endfor %} </h3>
+        <!-- <h3>Antonyms: {{ants}}</h3> -->
+    </div>
+</body>
+
+</html>
